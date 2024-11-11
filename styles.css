@@ -1,0 +1,752 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
+
+:root {
+    --text: #1E1E1E;
+    --p: #5289B5;
+    --s: #AFD8F2;
+    --a: #7a9ebb;
+    
+}
+
+.cmd {
+    --text: #1E1E1E;
+    --p: #fb6f92;
+    --s: #ffb3c6;
+    --a: #ff95b0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: "League Spartan";
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #EDF2F3;
+}
+
+.hello {
+    width: 20rem;
+    height: 230px;
+    padding: 2rem;
+    text-align: center;
+    background-image: url('cats.svg');
+    background-repeat: no-repeat;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+.hello button {
+    color: #EDF2F3;
+    text-align: center;
+    display: inline;
+    margin-right: 6.25rem;
+    margin-top: 1rem;
+    width: 9.9375rem;
+    height: 2.5rem;
+    border-radius: 0.625rem;
+    background: var(--p);
+    border: none;
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    margin: 1rem auto;
+}
+
+
+header {
+    margin-top: 2rem;
+    width: 100vw;
+    height: 4rem;
+    display: inline-flex;
+    overflow-y: hidden;
+}
+
+header img {
+    display: inline-block;
+    width: 3rem;
+    height: 70%;
+    
+}
+
+header a img:hover {
+    background-color: #EDF2F3;
+    border-radius: .06rem;
+    scale: 0.9;
+}
+
+header strong {
+    font-weight: 900;
+}
+
+header a {
+    display: inline-flex;
+    width: 12.5rem;
+    gap: .5rem;
+    align-items: center;
+    color: var(--text);
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    text-decoration: none;
+    margin-top: 1rem;
+    margin-left: 6.25rem;
+}
+
+header p {
+    text-align: center;
+    margin: auto;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-top: 1.60rem;
+}
+
+header button {
+    color: #EDF2F3;
+    text-align: center;
+    display: inline;
+    margin-right: 6.25rem;
+    margin-top: 1rem;
+    width: 9.9375rem;
+    height: 2.5rem;
+    border-radius: 0.625rem;
+    background: var(--p);
+    border: none;
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+}
+
+#cmd {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.mode {
+    display: inline-block;
+    position: relative;
+    width: 60px;
+    height: 34px;
+    margin-left: 1rem;
+}
+
+.slid {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--s);
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slid:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-image: url('cmd.svg');
+    background-repeat: no-repeat;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slid {
+    background-color: var(--s);
+    accent-color: var(--s);
+}
+
+input:focus + .slid {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slid:before {
+    transform: translateX(26px);
+}
+
+.slid.bilog {
+    border-radius: 34px;
+}
+  
+.slid.bilog:before {
+    border-radius: 50%;
+}
+
+.disclaimer {
+    margin: auto;
+    width: 88%;
+    text-align: center;
+    color: var(--text);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.disclaimer p {
+    display: inline-block;
+    margin-left: 2rem;
+}
+
+.calc-grade {
+    width: 100vw;
+    height: auto;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 1rem;
+    
+}
+
+.calculator-section, .grade-section {
+    padding-bottom: 2rem;
+}
+
+.calculator {
+    margin-left: 2rem;
+    width: 26.625rem;
+    height: 32.875rem;
+    flex-shrink: 0;
+    border-radius: 1.25rem;
+    background: var(--s);
+}
+
+.pmf, .lab-lec{
+    margin: auto;
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-around;
+}
+
+.pmfr{
+    display: inline-flex;
+    width: 7rem;
+    height: 2.5rem;
+    margin-top: 1rem;
+}
+
+.pmfr input, .llr input {
+    visibility:hidden; 
+    width:0;
+}
+
+.pmfr label {
+    color: #000000;
+    width: 7.0625rem;
+    height: 2.5rem;
+    flex-shrink: 0;
+    border-radius: 2.5rem;
+    background: #EDF2F3;
+    text-align: center;
+    line-height: 200%;
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 600;
+}
+
+.pmfr label:hover, .llr label:hover {
+    color: var(--s);
+}
+
+.pmfr input:checked + label, .llr input:checked + label{
+    flex-shrink: 0;
+    border-radius: 2.5rem;
+    background: var(--p);
+    color: #FFFFFF;
+    margin: auto;
+}
+
+.llr {
+    display: inline-flex;
+    width: auto;
+    height: 2.5rem;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.llr label {
+    width: 10rem;
+    color: #000000;
+    background: #EDF2F3;
+    line-height: 160%;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 600;
+    border-radius: 2.5rem;
+}
+
+.subject {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1.5rem;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+.subject label {
+    text-align: center;
+    color: var(--text);
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding-bottom: .2rem;
+}
+
+.subject input {
+    width: 15rem;
+    height: 2.5rem;
+    flex-shrink: 0;
+    border-radius: 2.5rem;
+    background: #EDF2F3;
+    border: none;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color: var(--text);
+    text-align: center;
+    text-transform: uppercase;
+}
+
+fieldset {
+    border: none;
+}
+
+.cs, .me {
+    width: 100%;
+}
+
+.cs p, .me p {
+    margin-top: 2rem;
+    text-align: center;
+    font-size: 1.5rem;
+    padding-bottom: .5rem;
+}
+
+.cs div, .me div {
+    width: 16rem;
+    margin: auto;
+}
+
+.cs label, .me label {
+    font-size: 1.125rem;
+    text-align: center;
+}
+
+.cs div, .me div {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.cs input, .me input {
+    width: 6.875rem;
+    height: 2.5rem;
+    flex-shrink: 0;
+    border-radius: 1.25rem;
+    border: none;
+    text-align: center;
+    font-size: 2rem;
+}
+
+.cs strong, .me strong {
+    font-size: 2rem;
+}
+
+div .grades {
+    margin: auto;
+    width: 10.9375rem;
+    height: 4rem;
+    margin-top: 1rem;
+}
+
+.grades button {
+    width: 9.9375rem;
+    height: 3.3125rem;
+    flex-shrink: 0;
+    border-radius: 1.25rem;
+    background: var(--p);
+    border: none;
+    font-size: 2rem;
+    filter: drop-shadow(3px 5px 5px rgba(0, 0, 0, 0.25));
+}
+
+.grades button.disabled, .grades button.disabled:not(:hover) {
+    color: gray;
+    background: #FFFFFF;
+}
+
+.grades button:hover {
+    color: #EDF2F3;
+}
+
+.grade {
+    width: 47.5625rem;
+    height: 23.6875rem;
+    flex-shrink: 0;
+    border-radius: 1.25rem;
+    background: var(--p);
+    border: none;
+    margin-right: 2rem;
+}
+
+.grade .stl {
+    display: flex;
+    margin-top: 2rem;
+    margin-left: 2rem;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.grade .sub {
+    width: auto;
+    padding: .5rem;
+    border-radius: 2.5rem;
+    background: var(--s);
+    margin-right: 1cqi;
+    margin-left: 1rem;
+    font-size: 1.125rem;
+    font-weight: 600;
+}
+
+.grade-table {
+    margin-top: 2rem;
+}
+
+table {
+    border-spacing: 0 1rem;
+    margin: auto;
+    border-radius: 0.625rem;
+    width: 46.05256rem;
+}
+
+tr {
+    width: 42.25rem;
+    height: 3.75rem;
+    flex-shrink: 0;
+    background: #EDF2F3;
+}
+
+tr:first-child {
+    padding-bottom: 1rem;
+}
+
+th:first-child, td:first-child {
+    border-top-left-radius: 0.6rem;
+    border-bottom-left-radius: 0.6rem;
+}
+
+th:last-child, td:last-child {
+    border-top-right-radius: 0.6rem;
+    border-bottom-right-radius: 0.6rem;
+}
+
+th, td{
+    width: 7rem;
+    text-align: center;
+}
+
+.grade-buttons {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.grade-buttons button {
+    width: 9.9375rem;
+    height: 3.3125rem;
+    flex-shrink: 0;
+    font-size: 2rem;
+    border: none;
+    border-radius: 1.25rem;
+    background: var(--s);
+    margin-top: 1.5rem;
+}
+
+.grade-buttons button:hover {
+    color: #FFFFFF;
+}
+
+.info {
+    margin-top: 3rem;
+    margin-left: 3rem;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.gs {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 2rem;
+    width: 80vw;
+    margin: auto;
+    align-items: center;
+}
+
+.gs strong {
+    margin-left: 1rem;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+}
+
+.tdgt {
+    width: 80vw;
+}
+
+.dgt {
+    width: 80vw;
+}
+
+.tdgt thead tr:nth-child(1) {
+    width: 64.375rem;
+    height: 3.75rem;
+    flex-shrink: 0;
+    background: #FFFFFF !important;
+}
+
+.dgt th {
+    font-size: 1rem;
+}
+
+.dgt td:first-child {
+    color: #1E1E1E;
+}
+
+.dgt td {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.dgt tr:nth-child(odd) {
+    border-radius: 1.25rem;
+    background: var(--s);
+}
+
+.dgt tr:nth-child(even) {
+    border-radius: 1.25rem;
+    background: var(--a);
+}
+
+.dgt td a {
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+}
+
+a img {
+    user-select: none;
+    cursor: pointer;
+}
+
+a img:hover {
+    background-color: var(--a);
+    border-radius: .06rem;
+    scale: 0.9;
+}
+
+.delo, .edito {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.25);
+}
+
+.delm {
+    width: 20rem;
+    height: 9rem;
+    background-color: #EDF2F3;
+    margin: 15% auto;
+    padding: 1rem 2rem;
+    border-radius: .6rem;
+}
+
+.medit {
+    width: 20rem;
+    height: 15rem;
+    background-color: #EDF2F3;
+    margin: 15% auto;
+    padding: 1rem 2rem;
+    border-radius: .6rem;
+}
+
+.delm h1{
+    color: var(--p);
+    padding-bottom: 1rem;
+    font-size: 2rem;
+    user-select: none;
+}
+
+.delm p {
+    padding-bottom: 1rem;
+    font-size: 1rem;
+    user-select: none;
+}
+
+.delm button, .medit button {
+    border: none;
+    background-color: var(--s);
+    padding: .5rem;
+    cursor: pointer;
+    margin-left: 2rem;
+    border-radius: .4rem;
+    float: right;
+    user-select: none;
+}
+
+.delm button:hover, .medit button:hover {
+    scale: 1.1;
+    font-weight: 600;
+}
+
+.delm button#delete {
+    background-color: #ffa5a5;
+}
+
+.medit button#save {
+    background-color: rgb(92, 228, 92);
+}
+
+#subjectd {
+    text-align: center;
+    width: 8rem;
+    height: 2rem;
+    font-size: 1rem;
+    border-radius: .6rem;
+    border: none;
+    background-color: var(--s);
+}
+
+option {
+    background-color: var(--s);
+}
+
+.editts {
+    display: inline-flex;
+    text-align: center;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin: .5rem auto;
+}
+
+.medit h2 {
+    font-size: 2rem;
+}
+
+.editt {
+    display: inline-flex;
+    flex-direction: column;
+}
+
+.editt input {
+    visibility:hidden; 
+    width:0;
+}
+
+.editt label {
+    color: #000000;
+    width: 5.0625rem;
+    height: 1.5rem;
+    flex-shrink: 0;
+    border-radius: 2.5rem;
+    background: var(--s);
+    text-align: center;
+    line-height: 200%;
+    font-size: .7rem;
+    font-style: normal;
+    font-weight: 600;
+}
+
+.editt label:hover {
+    color: #ffffff;
+}
+
+.editt input:checked + label{
+    flex-shrink: 0;
+    border-radius: 2.5rem;
+    background: var(--p);
+    color: #FFFFFF;
+    margin: auto;
+}
+
+.edits input {
+    width: 10rem;
+    height: 2.5rem;
+    flex-shrink: 0;
+    border-radius: 2.5rem;
+    background: var(--p);
+    border: none;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color: #EDF2F3;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+@media screen and (max-width: 1200px) {
+    .grade {
+        width: 27rem;
+    }
+
+    .grade-tb {
+        width: 24.05256rem;
+    }
+
+    th {
+        font-size: .7rem;
+    }
+
+    .tdgt th {
+        font-size: .7rem;
+    }
+
+}
+
+@media screen and (max-width: 1000px) {
+    .calc-grade {
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+    .calculator-section, .grade-section {
+        width: 80vw;
+        margin: auto;
+    }
+
+    .calculator, .grade {
+        margin: auto;
+    }
+
+    header a, header p, header button{
+        font-size: 1rem;
+    }
+
+    a img {
+        width: 15px;
+        height: 15px;
+    }
+}

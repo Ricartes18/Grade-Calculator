@@ -1,0 +1,132 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="icon" type="image/png" sizes="40x40" href="cmd.svg">
+    </head>
+    <body>
+        <header>
+            <a href="calculator.html"><img src="cmd.svg" alt="cmd logo"><strong id="nm">RICARTES</strong></a>
+            <p>GRADE CALCULATOR</p>
+            <button id="grades" disabled>DISPLAY GRADES</button>
+        </header>
+        <div class="disclaimer">            
+            <label class="mode">
+                <input type="checkbox" id="cmd">
+                <span class="slid bilog"></span>
+            </label>
+            <p>*This grade calculator provides an estimated calculation based on the information provided.*</p>
+        </div>
+
+        <div class="calc-grade">
+            <div class="calculator-section">
+                
+                    <div class="calculator">
+                        <form action="" class="formcalc">
+                            <fieldset>
+                            <div class="pmf">
+                                <div class="pmfr">
+                                    <input type="radio" name="pmf" id="prelim" value="prelim" checked required>
+                                    <label for="prelim">Prelim</label>
+                                </div>
+                                
+                                <div class="pmfr">
+                                    <input type="radio" name="pmf" value="midterm" id="midterm">
+                                    <label for="midterm">Midterm</label>
+                                </div>
+                                <div class="pmfr">
+                                    <input type="radio" name="pmf" value="finals" id="finals">
+                                    <label for="finals">Finals</label>
+                                </div>
+                            </div>
+                            <div class="lab-lec">
+                                <div class="llr">
+                                    <input type="radio" name="ll" id="lab" value="laboratory" checked required>
+                                    <label for="lab">Laboratory</label>
+                                </div>
+                                <div class="llr">
+                                    <input type="radio" name="ll" id="lec" value="lecture">
+                                    <label for="lec">Lecture</label>
+                                </div>
+                            </div>
+
+                            <div class="subject">
+                                <label for="subject">Subject</label>
+                                <input type="text" name="subject" id="subject" required>
+                            </div>
+
+                            <div class="cs">
+                                <p>Class Standing</p>
+                                <div>
+                                    <label for="css">Score</label>
+                                    <label for="cst">Total</label>
+                                </div>
+                                
+                                <div>
+                                    <input type="number" name="css" id="css" placeholder="000" min="0" max="999" required> 
+                                    <strong>/</strong>
+                                    <input type="number" name="cst" id="cst" placeholder="000" min="0" max="999" required> 
+                                </div>
+                            </div>
+
+                            <div class="me">
+                                <p>Major Exam</p>
+                                <div>
+                                <label for="mes">Score</label>
+                                <label for="met">Total</label>
+                                </div>
+                                
+                                <div>
+                                    <input type="number" name="mes" id="mes" placeholder="000" min="0" max="999" required> 
+                                    <strong>/</strong>
+                                    <input type="number" name="met" id="met" placeholder="000" min="0" max="999" required> 
+                                </div>
+                            </div>
+                            <div class="grades">
+                                <button type="button" id="calculate">Calculate</button>
+                            </div>
+                            </fieldset>
+                        </form>
+                    </div>   
+            </div>
+
+            <div class="grade-section">
+                <div class="grade">
+                    <div class="stl">
+                        <p class="sub" id="subjects"></p>
+                        <p class="sub" id="term"></p>
+                        <p class="sub" id="lab-lec"></p>
+                    </div>
+                    <div class="grade-table">
+                        <table class="grade-tb">
+                            <tr>
+                                <th>Class Standing Average</th>
+                                <th>Major Exam Average</th>
+                                <th>Computed Average</th>
+                                <th>Transmuted Value</th>
+                                <th>Current Grade</th>
+                            </tr>
+                            <tr id="computed">
+                                <td id="csa"></td>
+                                <td id="mea"></td>
+                                <td id="ca"></td>
+                                <td id="tv"></td>
+                                <td id="cg"></td>
+                            </tr>
+                            
+                        </table>
+                    </div>
+                    <div class="grade-buttons">
+                        <button id="clear">Clear</button>
+                        <button id="save" disabled>Save</button>
+                    </div>
+                </div>
+                <div class="info">
+                    <p id="info"></p>
+                </div>
+            </div>
+        </div>
+       
+
+        <script src="main.js"></script>
+    </body>
+</html>
