@@ -189,6 +189,7 @@ function clearall() {
 
     info.innerText = "Cleared"
     clear.disabled = true;
+    calculate.disabled = true;
    
 }
 
